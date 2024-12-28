@@ -3,8 +3,8 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "kis",
-            "group": "ri",
+            "name": "kisarr",
+            "group": "cemas",
             "database": "${workspaceFolder:next-clerk-prisma}/prisma/dev.db"
         }
     ],
