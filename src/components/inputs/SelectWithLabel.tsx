@@ -19,8 +19,8 @@ import {
 } from '@/components/ui/select'
 
 type DataObj = {
-    id: string,
-    description: string,
+    id: number,
+    titre: string,
 }
 
 type Props<S> = {
@@ -65,9 +65,9 @@ export function SelectWithLabel<S>({
                             {data.map(item => (
                                 <SelectItem
                                     key={`${nameInSchema}_${item.id}`}
-                                    value={item.id}
+                                    value={item.id.toString()}
                                 >
-                                    {item.description}
+                                    {item.titre}
                                 </SelectItem>
                             ))}
                         </SelectContent>

@@ -1,5 +1,5 @@
 <p align="left" marginLeft="6">
-<img src="public\img\logos\cemas.jpg" width="100" height="60" border="0"/>
+<img src="/public/img/logos/cemas.jpg" width="100" height="60" border="0"/>
 </p>
 
 ### CEM Ahoune Sané
@@ -7,7 +7,6 @@
 # PREAMBULE		
 >L’école publique sénégalaise est laïque, démocratique et nationale. Elle est un espace privilégié de formation et d’éducation où tous les élèves viennent acquérir des compétences de savoir, de savoir-faire et savoir être en vue de participer pleinement au développement du Sénégal.
 Ainsi tous les élèves sont soumis à la même réglementation scolaire qui ne prend pas en compte leurs aspirations idéologiques et religieuses.
-Conformément à la loi d’orientation N° 91-22 du 16 Février 1991 portant orientation de l’Education nationale, modifiée, la réglementation scolaire vise en substance à former des hommes et des femmes dévoués et respectueux des lois et des règles de la société. A cet effet, ce présent règlement intérieur a pour but de développer chez l’élève le culte du travail, la citoyenneté, le patriotisme, le sens de la responsabilité, l’importance de la discipline et le respect du bien public.
 
 ## CHAPITRE I : L’ADMISSION AU COLLEGE		
 >#### Article 1 :

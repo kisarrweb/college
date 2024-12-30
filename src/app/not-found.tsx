@@ -12,8 +12,8 @@ export default function NotFound() {
                 <h2 className="text-2xl">Page Not Found</h2>
                 <Image
                     className="m-0 rounded-xl"
-                    src="/images/not-found-1024x1024.png"
-                    width={300}
+                    src="/images/livres_cadeaux.jpg"
+                    width={500}
                     height={300}
                     sizes="300px"
                     alt="Page Not Found"

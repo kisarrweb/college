@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from '@/components/ui/toaster'
+import { Header } from "@/components/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,11 +18,11 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Computer Repair Shop',
-    default: 'Computer Repair Shop',
+    template: '%s | CEMAS',
+    default: 'CEMAS',
   },
-  description: "Dan's Computer Repair Shop",
-  applicationName: "Repair Shop"
+  description: "CEM Ahoune Sané, Bignona 1 à Ziguinchor",
+  applicationName: "CEMAS-RI"
 };
 
 export default function RootLayout({
@@ -40,6 +41,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+           <Header />
           {children}
           <Toaster />
         </ThemeProvider>

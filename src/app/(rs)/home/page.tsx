@@ -1,8 +1,8 @@
-import Link from "next/link"
+import Link from 'next/link';
 
-export default function Home() {
+
+export default function page() {
   return (
-    <div className="bg-teal-200">
 
       <main className="flex flex-col justify-center text-center max-w-5xl mx-auto h-dvh">
 
@@ -23,6 +23,7 @@ export default function Home() {
 
       </main>
 
-    </div>
+
   );
 }
+

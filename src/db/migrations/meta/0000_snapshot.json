@@ -1,9 +1,135 @@
 {
-  "id": "f89ce731-6d23-44b5-bfa7-d1dae63a96d8",
+  "id": "91432f6f-dd51-4f9a-8bfd-9b93579b8c09",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.articles": {
+      "name": "articles",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "titre": {
+          "name": "titre",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "contenu": {
+          "name": "contenu",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "article_id": {
+          "name": "article_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "articles_article_id_articles_id_fk": {
+          "name": "articles_article_id_articles_id_fk",
+          "tableFrom": "articles",
+          "tableTo": "articles",
+          "columnsFrom": [
+            "article_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "public.chapitres": {
+      "name": "chapitres",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "titre": {
+          "name": "titre",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "contenu": {
+          "name": "contenu",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "child_id": {
+          "name": "child_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "chapitres_child_id_fkey": {
+          "name": "chapitres_child_id_fkey",
+          "tableFrom": "chapitres",
+          "tableTo": "chapitres",
+          "columnsFrom": [
+            "child_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
     "public.customers": {
       "name": "customers",
       "schema": "",
@@ -40,6 +166,12 @@
         },
         "address1": {
           "name": "address1",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "address2": {
+          "name": "address2",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
