@@ -23,7 +23,7 @@ export default async function ArticleFormPage({
 }) {
     try {
         const { getPermission } = getKindeServerSession()
-        const managerPermission = await getPermission("manager")
+        // const managerPermission = await getPermission("manager")
 
         const { myArticleId } = await searchParams
 

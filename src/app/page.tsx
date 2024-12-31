@@ -9,7 +9,7 @@ export default function Home() {
         <div className="flex flex-col gap-6 p-12 rounded-xl bg-black/90 w-4/5 sm:max-w-96 mx-auto text-white sm:text-2xl">
           <h1 className="text-3xl font-bold">CEM Ahoune Sané</h1>
           <address className="text-md">
-            Quartier Château d'Eau<br />
+            Quartier Château d&apos;Eau<br />
             Bignona Commune
           </address>
           <p>

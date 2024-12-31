@@ -59,11 +59,11 @@ export default function TicketTable({ data }: Props) {
     ])
 
     usePolling(searchParams.get("searchText"), 300000)
+    const page = searchParams.get("page")
 
     const pageIndex = useMemo(() => {
-        const page = searchParams.get("page")
         return page ? parseInt(page) - 1 : 0
-    }, [searchParams.get("page")])
+    }, [page])
 
     const columnHeadersArray: Array<keyof RowType> = [
         "ticketDate",

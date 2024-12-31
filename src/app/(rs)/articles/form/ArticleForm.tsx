@@ -4,11 +4,10 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Form } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
-import { asc, desc } from 'drizzle-orm';
+// import { asc, desc } from 'drizzle-orm';
 import { InputWithLabel } from "@/components/inputs/InputWithLabel"
-import { SelectWithLabel } from "@/components/inputs/SelectWithLabel"
+import { SelectWithLabel_copy } from "@/components/inputs/SelectWithLabel_copy"
 import { TextAreaWithLabel } from "@/components/inputs/TextAreaWithLabel"
-import { CheckboxWithLabel } from "@/components/inputs/CheckboxWithLabel"
 
 import { ChapitresArray } from "@/constants/ChapitresArray"
 
@@ -22,15 +21,13 @@ import { DisplayServerActionResponse } from "@/components/DisplayServerActionRes
 import { useSearchParams } from "next/navigation"
 import { useEffect } from "react"
 import { saveArticleAction } from "@/app/actions/saveArticleAction"
-import { db } from "@/db"
-import { articles as Art } from "@/db/schema"
 
 
 type Props = {
     article?: selectArticleSchemaType,
 }
 
-export default async function ArticleForm({ article }: Props) {
+export default function ArticleForm({ article }: Props) {
 
     const { toast } = useToast()
     
@@ -77,6 +74,7 @@ export default async function ArticleForm({ article }: Props) {
             }
         },
         onError({ error }) {
+            console.error(error)
             toast({
                 variant: "destructive",
                 title: "Error",
@@ -103,17 +101,18 @@ export default async function ArticleForm({ article }: Props) {
                     className="flex flex-col md:flex-row gap-4 md:gap-8"
                 >
                     <div className="flex flex-col gap-4 w-full max-w-xs">
-                        <SelectWithLabel<insertArticleSchemaType>
+                        <SelectWithLabel_copy<insertArticleSchemaType>
                             fieldTitle="Parent"
                             nameInSchema="articleId"
                             data={ChapitresArray}
                         />
+
                         <InputWithLabel<insertArticleSchemaType>
                             fieldTitle="Titre"
                             nameInSchema="titre"
                         />
 
-                        <InputWithLabel<insertArticleSchemaType>
+                        <TextAreaWithLabel<insertArticleSchemaType>
                             fieldTitle="Contenu"
                             nameInSchema="contenu"
                         />                        

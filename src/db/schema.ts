@@ -8,6 +8,8 @@ import {
   text,
   foreignKey,
   AnyPgColumn,
+  PgColumn,
+  PgTableWithColumns,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 
@@ -54,6 +56,7 @@ export const articles = pgTable("articles", {
   articleId: integer("article_id").references(
     (): AnyPgColumn => articles.id
   ),
+
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
@@ -63,8 +66,12 @@ export const articles = pgTable("articles", {
 
 export const articlesRelations = relations(
   articles,
-  ({ one, many }) => ({
+  ({ one }) => ({
     article: one(articles, {
+      fields: [articles.articleId],
+      references: [articles.id],
+    }),
+    articles: many(articles, {
       fields: [articles.articleId],
       references: [articles.id],
     }),
@@ -106,3 +113,7 @@ export const ticketsRelations = relations(tickets, ({ one }) => ({
     references: [customers.id],
   }),
 }));
+function many(articles: PgTableWithColumns<{ name: "articles"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "articles"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; generated: undefined; }, {}, {}>; titre: PgColumn<{ name: "titre"; tableName: "articles"; dataType: "string"; columnType: "PgVarchar"; data: string; driverParam: string; notNull: true; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; hasRuntimeDefault: false; enumValues: [string, ...string[]]; baseColumn: never; generated: undefined; }, {}, {}>; contenu: PgColumn<{ name: "contenu"; tableName: "articles"; dataType: "string"; columnType: "PgText"; data: string; driverParam: string; notNull: false; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; hasRuntimeDefault: false; enumValues: [string, ...string[]]; baseColumn: never; generated: undefined; }, {}, {}>; articleId: PgColumn<{ name: "article_id"; tableName: "articles"; dataType: "number"; columnType: "PgInteger"; data: number; driverParam: string | number; notNull: false; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; generated: undefined; }, {}, {}>; createdAt: PgColumn<{ name: "created_at"; tableName: "articles"; dataType: "date"; columnType: "PgTimestamp"; data: Date; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: false; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; generated: undefined; }, {}, {}>; updatedAt: PgColumn<{ name: "updated_at"; tableName: "articles"; dataType: "date"; columnType: "PgTimestamp"; data: Date; driverParam: string; notNull: true; hasDefault: true; isPrimaryKey: false; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; generated: undefined; }, {}, {}>; }; dialect: "pg"; }>, arg1: { fields: import("drizzle-orm/pg-core").PgColumn<{ name: "article_id"; tableName: "articles"; dataType: "number"; columnType: "PgInteger"; data: number; driverParam: string | number; notNull: false; hasDefault: false; isPrimaryKey: false; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; generated: undefined; }, {}, {}>[]; references: import("drizzle-orm/pg-core").PgColumn<{ name: "id"; tableName: "articles"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; isAutoincrement: false; hasRuntimeDefault: false; enumValues: undefined; baseColumn: never; generated: undefined; }, {}, {}>[]; }): any {
+  throw new Error("Function not implemented.");
+}
+

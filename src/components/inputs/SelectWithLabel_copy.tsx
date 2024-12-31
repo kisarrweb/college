@@ -19,8 +19,8 @@ import {
 } from '@/components/ui/select'
 
 type DataObj = {
-    id: string,
-    description: string,
+    id: number,
+    titre: string,
 }
 
 type Props<S> = {
@@ -30,7 +30,7 @@ type Props<S> = {
     className?: string,
 }
 
-export function SelectWithLabel<S>({
+export function SelectWithLabel_copy<S>({
     fieldTitle, nameInSchema, data, className
 }: Props<S>) {
     const form = useFormContext()
@@ -67,7 +67,7 @@ export function SelectWithLabel<S>({
                                     key={`${nameInSchema}_${item.id}`}
                                     value={item.id.toString()}
                                 >
-                                    {item.description}
+                                    {item.titre}
                                 </SelectItem>
                             ))}
                         </SelectContent>

@@ -15,7 +15,7 @@ export default function page() {
           <p>
             Sur place de 07h 45 à 19h
           </p>
-          <Link href="tel:+221775544191" className="hover:underline">
+          <Link href="tel:+221775544191" className="hover:bg-red-500">
             (221) 33 994 18 04
           </Link>
           <a href="mailto:cemasane@gmail.com">cemasane@gmail.com</a>

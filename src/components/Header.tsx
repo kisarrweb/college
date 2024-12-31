@@ -14,7 +14,6 @@ import { Button } from "@/components/ui/button";
 import { NavButton } from "@/components/NavButton";
 import { ModeToggle } from "@/components/ModeToggle";
 import { NavButtonMenu } from "./NavButtonMenu";
-import Image from "next/image";
 
 export async function Header() {
   const { getPermissions } = getKindeServerSession();

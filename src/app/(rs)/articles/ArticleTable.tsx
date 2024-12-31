@@ -32,7 +32,7 @@ import { Button } from "@/components/ui/button"
 
 import { MoreHorizontal, TableOfContents } from "lucide-react"
 
-import { useRouter } from "next/navigation"
+// import { useRouter } from "next/navigation"
 import Link from "next/link"
 
 type Props = {
@@ -40,7 +40,7 @@ type Props = {
 }
 
 export default function ArticleTable({ data }: Props) {
-    const router = useRouter()
+    // const router = useRouter()
 
     const columnHeadersArray: Array<keyof selectArticleSchemaType> = [
         "titre",
